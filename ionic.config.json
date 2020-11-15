@@ -1,0 +1,7 @@
+{
+  "name": "Techwire01",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

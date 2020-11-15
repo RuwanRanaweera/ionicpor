@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/gems/tabs/search"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Account</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="home">
+ 
+  <ion-row class="ava">  
+    <ion-col>
+      <ion-button [routerLink]="['/', 'registration']">Sign In</ion-button>
+    </ion-col>
+
+</ion-row>
+
+  <ion-row class="avar">  
+   <ion-col>
+      <ion-button  [routerLink]="['/', 'login']">Login</ion-button>
+    </ion-col>
+  </ion-row>
+</div>
+</ion-content>

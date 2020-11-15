@@ -1,0 +1,101 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/gems/tabs/gem-list"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Add Gem</ion-title>
+    <ion-buttons slot="primary">
+      <ion-button (click)="onCreateGem()" [disabled]="!form.valid">
+        <ion-icon name="checkmark-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="form">
+  <ion-grid>
+    <ion-row>
+      <ion-col size-sm="6" offset-sm="3" >
+        <ion-item>
+          <ion-label position="floating">Gem Name</ion-label>
+          <ion-input type="text" autocomplete autocorret formControlName="title"></ion-input>
+        </ion-item>
+
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-list>
+          <ion-radio-group value="biff">
+            <ion-list-header>
+              <ion-label>Gem Type</ion-label>
+            </ion-list-header>
+        
+            <ion-item>
+              <ion-label>Fixed Gem</ion-label>
+              <ion-radio slot="start" value="biff"></ion-radio>
+            </ion-item>
+        
+            <ion-item>
+              <ion-label>Bid Gem</ion-label>
+              <ion-radio slot="start" value="griff"></ion-radio>
+            </ion-item>
+          </ion-radio-group>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size-sm="6" offset-sm="3">
+        <ion-item>
+          <ion-label position="floating">Short Description</ion-label>
+          <ion-textarea rows="3" formControlName="description"></ion-textarea>
+        
+        </ion-item>
+
+      </ion-col>
+    </ion-row>
+
+    <ion-row *ngIf="!form.get('description').valid && form.get('description').touched">
+      <ion-col size-sm="6" offset-sm="3">
+        <p>Description must be between 1 and 100 charaters</p>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size-sm="6" offset-sm="3" >
+        <ion-item>
+          <ion-label position="floating">Price</ion-label>
+          <ion-input type="number" formControlName="price"></ion-input>
+        </ion-item>
+
+      </ion-col>
+    </ion-row>
+
+    <!-- <ion-row>
+      <ion-col size-sm="6" >
+        <ion-item>
+          <ion-label position="floating">Available From</ion-label>
+          <ion-datetime displayFormat="HH:mm" min="2019-01-01" max="2022-01-01" formControlName="dateFrom"></ion-datetime>
+        </ion-item>
+
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size-sm="6">
+        <ion-item>
+          <ion-label position="floating">Available To</ion-label>
+          <ion-datetime displayFormat="HH:mm" min="2019-01-02" max="2022-01-01" formControlName="dateTo"></ion-datetime>
+        </ion-item>
+
+      </ion-col>
+    </ion-row> -->
+    
+    
+  </ion-grid>
+</form>
+
+</ion-content>

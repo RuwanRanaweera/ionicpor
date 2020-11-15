@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      {{ selectedGem.title }}
+    </ion-title>
+    <ion-buttons slot="primary">
+      <ion-button (click)="onCancel()" text-right>
+        <ion-icon name="close-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-text-center">
+<form>
+<ion-grid>
+  <ion-row>
+    <ion-col size-sm="6" offset-sm="3">
+      <ion-item>
+        <ion-label position="floating">Gem Name </ion-label>
+        <ion-input type="text" ngModel name="gem-name" required></ion-input>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col size-sm="6" offset-sm="3">
+      <ion-item>
+        <ion-label position="floating">Gem Id</ion-label>
+        <ion-input type="text" ngModel name="gem-id" required></ion-input>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col size-sm="6" offset-sm="3">
+      <ion-item>
+        <ion-label position="floating">Bid Price</ion-label>
+        <ion-input type="number" ngModel name="price" required></ion-input>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col size-sm="6" offset-sm="3">
+      <ion-item>
+        <ion-label position="floating">Buyer Id</ion-label>
+        <ion-input type="text" ngModel name="by-id" required></ion-input>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col size-sm="6" offset-sm="3">
+      <ion-button  type="submit"   color="primary">Bid</ion-button>
+    </ion-col>
+  </ion-row>
+
+
+</ion-grid>
+  <!-- <h3>{{ selectedGem.price | currency }}</h3>
+  <p>{{ selectedGem.description }}</p> -->
+
+</form>
+</ion-content>

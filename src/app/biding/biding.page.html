@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Your Bidings</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size-md="6" offset-md="3">
+        <ion-list>
+          <ion-item-sliding *ngFor="let biding of loadedBidings" #slidingBiding>
+            <ion-item>
+              <ion-label>
+                <h2> Biding Gem Name : {{ biding.gemTitle }} </h2>
+                <h2>Bding Gem Id : {{ biding.gemId }}</h2>
+                <h2>Biding Gem Price : {{ biding.price | currency }}</h2>
+      
+                 <h2>Buyer Id : {{ biding.userId}}</h2>
+              </ion-label>
+            </ion-item>
+            <ion-item-options>
+              <ion-item-option color="danger" (click)="onCancelBiding(biding.id, slidingBiding)">
+                  <ion-icon name="trash" slot="icon-only"></ion-icon>
+              </ion-item-option>
+            </ion-item-options>
+          </ion-item-sliding>
+        </ion-list>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  
+
+</ion-content>

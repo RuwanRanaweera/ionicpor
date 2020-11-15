@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+      <!-- <ion-button (click)="onOpenMenu()">
+        Open
+      </ion-button> -->
+    </ion-buttons>
+    <ion-title>Search Gems</ion-title>
+  </ion-toolbar>
+  </ion-header>
+
+<ion-content>
+  <ion-searchbar></ion-searchbar>
+  <ion-segment (ionChange)="onFilterUpdate($event)">
+    <ion-segment-button value="all" checked>All Gems</ion-segment-button>
+    <ion-segment-button value="biding">Biding Gems</ion-segment-button>
+  </ion-segment>
+<ion-grid>
+  <ion-row>
+    <ion-col size="12" size-sm="8" offset-sm="2" class="ion-text-center">
+      <ion-card *ngFor="let gems of loadedGems ">
+        <ion-card-header>
+          <ion-card-title>
+            {{ gems.title }}
+          </ion-card-title>
+          <ion-card-title>{{ gems.price | currency}}</ion-card-title>
+        </ion-card-header>
+        <ion-img [src]="gems.imageUrl" ></ion-img>
+        <ion-card-content>
+          <p>{{ gems.description}}</p>
+        </ion-card-content>
+        <div >
+          <ion-button fill="clear" color="primary" [routerLink]="['/', 'gems', 'tabs', 'search', gems.id]">More</ion-button>
+        </div>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col  size="12" size-sm="8" offset-sm="2" class="ion-text-center">
+      <ion-virtual-scroll [items]="listedLoadedGems">
+        <ion-item *virtualItem="let gem"  [routerLink]="['/', 'gems', 'tabs', 'search', gem.id]" detail  >
+          <ion-avatar></ion-avatar>
+          <ion-thumbnail slot="start">
+            <ion-img [src]="gem.imageUrl"></ion-img>
+          </ion-thumbnail>
+          <ion-label>
+              <h2>{{ gem.title }}</h2>
+              <h1>{{ gem.price | currency }}</h1>
+             
+              <p>{{ gem.description}}</p>
+          </ion-label>
+        </ion-item>
+      </ion-virtual-scroll>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+
+</ion-content>

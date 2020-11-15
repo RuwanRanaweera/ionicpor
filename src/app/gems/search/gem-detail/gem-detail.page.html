@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/gems/tabs/search"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{gem.title}}</ion-title>
+  </ion-toolbar>
+ </ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+
+      <ion-label class="ion-test-center">
+        <ion-img [src]="gem.imageUrl"></ion-img>
+      </ion-label>
+      <ion-label class="ion-test-center">
+        <h1>Gem Id: {{ gem.id }}</h1>  
+        <h1>Gem Price: {{ gem.price | currency}}</h1>
+        <h2>Gem Description: {{ gem.description}}</h2>       
+      
+        
+      </ion-label>
+    </ion-row>
+    <ion-row >
+  <ion-button color="primary" (click)="onBidGem()">Bid Gem</ion-button>
+  <ion-button color="primary" >Pay Gem</ion-button>
+</ion-row>
+</ion-grid>
+</ion-content>
