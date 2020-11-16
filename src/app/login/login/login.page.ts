@@ -28,16 +28,15 @@ export class LoginPage implements OnInit {
     if (!this.form.valid) {
       return;
     }
-    console.log(this.form);
   }
 
-  async loging() {
-    const res: any = await this.loginService.fetchValuve(JSON.stringify({
-      name: this.form.value.user,
-      password: this.form.value.password
-    }));
+ async loging() {
+  const res: any = await this.loginService.fetchValuve(JSON.stringify({
+    name: this.form.value.user,
+    password: this.form.value.password
+  }));
 
-    console.log(res);
-    }
+  console.log(res);
+  }
 
 }
