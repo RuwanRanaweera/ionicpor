@@ -59,7 +59,6 @@ export class GemsService {
   getGem(id: string){
     return {...this._gems.find(g => g.id === id)};
   }
-   
 
     addGem(
         title: string,

@@ -25,7 +25,7 @@
       <ion-col size-sm="6" offset-sm="3">
         <ion-item>
           <ion-label position="floating">Password</ion-label>
-          <ion-input type="password"  formControlName="password" minlength="6"></ion-input>
+          <ion-input type="password"  formControlName="password" minlength="1"></ion-input>
         
         </ion-item>
 
@@ -33,7 +33,7 @@
     </ion-row>
 
     <ion-row>
-      <ion-button [disabled]="!form.valid" (click)=" loging()"  [routerLink]="['/', 'gems', 'tabs', 'search']">Submit</ion-button>
+      <ion-button [disabled]="!form.valid" (click)=" loging()"  >Submit</ion-button>
     </ion-row>
 
       
