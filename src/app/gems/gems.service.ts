@@ -7,7 +7,7 @@ import { Gem } from './gem.model';
   providedIn: 'root'
 })
 export class GemsService {
-
+  constructor(private authService: AuthService) { }
   private _gems: Gem[] = [
     new Gem (
       'g1',
@@ -59,7 +59,7 @@ export class GemsService {
   getGem(id: string){
     return {...this._gems.find(g => g.id === id)};
   }
-    constructor(private authService: AuthService) { }
+   
 
     addGem(
         title: string,
@@ -75,7 +75,5 @@ export class GemsService {
         );
       this._gems.push(newGem);
     }
-
-   
 
 }

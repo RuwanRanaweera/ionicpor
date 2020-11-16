@@ -33,7 +33,7 @@ export class LoginPage implements OnInit {
 
  loging() {
 
-    console.log("this is work");
+    console.log('this is work');
 
     // const res: any = await  this.gemsService.fetchValuve();
 
