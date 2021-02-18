@@ -21,7 +21,7 @@ export class AuthPage implements OnInit {
   }
   onLogin(){
     this.isLoading = true;
-    this.authService.login();
+    // this.authService.login();
     this.loadingCtrl
     .create({keyboardClose: true, message: 'Logging in ...'})
     .then(loadingEl => {
