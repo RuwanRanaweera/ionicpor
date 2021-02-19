@@ -15,17 +15,36 @@
       </ion-label>
     </ion-col>
   </ion-row>
-<!-- <ion-button margin color="primary" [routerLink]="['/', 'gems', 'tabs', 'gem-list', 'edit-gem', gem.id]">Edit</ion-button> -->
-
 <ion-row>
   <ion-col>
-    <ion-label class="ion-test-center">
-      <ion-button (click)= "confirmdelete()" >Delete</ion-button>
-    </ion-label>
+    <ion-item >
+      <ion-text class="price">{{gem.price}}</ion-text>
+    </ion-item>
+  </ion-col>
+</ion-row>
+<ion-row>
+  <ion-col>
+    <ion-item >
+      <ion-text >{{gem.description}}</ion-text>
+    </ion-item>
+  </ion-col>
+</ion-row>
+<ion-row>
+  <ion-col>
+    <ion-item >
+      <ion-chip outline  color = "success">
+        <ion-icon name="star"></ion-icon>
+        <ion-label>{{gem.type}}</ion-label>
+      </ion-chip>
+    </ion-item>
   </ion-col>
 </ion-row>
 
 
-
+<ion-fab vertical="bottom" horizontal="end" slot="fixed">
+  <ion-fab-button routerLink="/new-gem">
+    <ion-icon name="create"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
 </ion-content>
   
