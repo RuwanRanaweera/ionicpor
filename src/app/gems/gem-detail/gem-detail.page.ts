@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ActionSheetController, ModalController, NavController } from '@ionic/angular';
+import { BidingService } from '../../biding/biding.service';
 import { CreateBidingComponent } from '../../biding/create-biding/create-biding.component';
 import { Gem } from '../gem.model';
 import { GemsService } from '../gems.service';
@@ -18,7 +19,8 @@ export class GemDetailPage implements OnInit {
       private gemsService: GemsService,
       private route: ActivatedRoute,
       private modalCtrl: ModalController,
-      private actionSheetCtrl: ActionSheetController
+      private actionSheetCtrl: ActionSheetController,
+      private bidingService: BidingService
       ) { }
 
   ngOnInit() {
