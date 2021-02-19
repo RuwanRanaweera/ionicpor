@@ -40,12 +40,16 @@ export class NewGemPage implements OnInit {
     }
     console.log(this.form);
     this.gemsService.addGem(this.form.value.title, this.form.value.description, +this.form.value.price, this.form.value.type );
-    // this.form.reset();
+    this.form.reset();
     if (this.form.value.type === 'griff') {
       this.router.navigate(['gems/fixed-gems-list']);
     } else {
       this.router.navigate(['gems/bid-gems-list']);
     }
+  }
+
+  onCancle() {
+    this.form.reset();
   }
 
 }
