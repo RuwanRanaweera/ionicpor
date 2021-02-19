@@ -194,6 +194,7 @@
 
   .md body {
     --ion-background-color: #121212;
+    // --ion-background-color: #ffffff;
     --ion-background-color-rgb: 18,18,18;
 
     --ion-text-color: #ffffff;
@@ -224,9 +225,11 @@
     --ion-item-background: #1e1e1e;
 
     --ion-toolbar-background: #1f1f1f;
-
+    // --ion-toolbar-background: #3880ff;
+    
     --ion-tab-bar-background: #1f1f1f;
 
     --ion-card-background: #1e1e1e;
+    
   }
 }

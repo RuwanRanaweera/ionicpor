@@ -5,55 +5,66 @@ import { GemsPage } from './gems.page';
 
 const routes: Routes = [
   {
-    path: 'tabs',
-    component: GemsPage,
-    children: [
-      {  path: 'search',
-      children: [
-        {
-          path: '',
-          loadChildren: () => import('./search/search.module').then( m => m.SearchPageModule)
-        },
-        {
-          path: ':gemId',
-          loadChildren: () => import('./search/gem-detail/gem-detail.module').then( m => m.GemDetailPageModule)
-        }
-      ]
-    },
-    {
-      path: 'gem-list',
-      children: [
-        {
-          path: '',
-          loadChildren: () => import('./gem-list/gem-list.module').then( m => m.GemListPageModule)
-        },
-        {
-          path: 'new-gem',
-          loadChildren: () => import('./gem-list/new-gem/new-gem.module').then( m => m.NewGemPageModule)
-        },
-        {
-          path: 'edit-gem/:gemId',
-          loadChildren: () => import('./gem-list/edit-gem/edit-gem.module').then( m => m.EditGemPageModule)
-        },
-        {
-          path: ':gemId',
-          loadChildren: () => import('./gem-list/gem-bid/gem-bid.module').then( m => m.GemBidPageModule)
-        }
-      ]
-    }
-    ,
-    {
-      path: '',
-      redirectTo: '/gems/tabs/search',
-      pathMatch: 'full'
-   }
-  ]
- },
- {
     path: '',
-    redirectTo: '/gems/tabs/search',
-    pathMatch: 'full'
- }
+    component: GemsPage
+//     path: 'tabs',
+//     component: GemsPage,
+//     children: [
+//       {  path: 'search',
+//       children: [
+//         {
+//           path: '',
+//           loadChildren: () => import('./search/search.module').then( m => m.SearchPageModule)
+//         },
+//         {
+//           path: ':gemId',
+//           loadChildren: () => import('./search/gem-detail/gem-detail.module').then( m => m.GemDetailPageModule)
+//         }
+//       ]
+//     },
+//     {
+//       path: 'gem-list',
+//       children: [
+//         {
+//           path: '',
+//           loadChildren: () => import('./gem-list/gem-list.module').then( m => m.GemListPageModule)
+//         },
+//         {
+//           path: 'new-gem',
+//           loadChildren: () => import('./gem-list/new-gem/new-gem.module').then( m => m.NewGemPageModule)
+//         },
+//         {
+//           path: 'edit-gem/:gemId',
+//           loadChildren: () => import('./gem-list/edit-gem/edit-gem.module').then( m => m.EditGemPageModule)
+//         },
+//         {
+//           path: ':gemId',
+//           loadChildren: () => import('./gem-list/gem-bid/gem-bid.module').then( m => m.GemBidPageModule)
+//         }
+//       ]
+//     }
+//     ,
+//     {
+//       path: '',
+//       redirectTo: '/gems/tabs/search',
+//       pathMatch: 'full'
+//    }
+//   ]
+//  },
+//  {
+//     path: '',
+//     redirectTo: '/gems/tabs/search',
+//     pathMatch: 'full'
+//  }
+  },
+  {
+    path: 'fixed-gems-list',
+    loadChildren: () => import('./fixed-gems-list/fixed-gems-list.module').then( m => m.FixedGemsListPageModule)
+  },
+  {
+    path: 'bid-gems-list',
+    loadChildren: () => import('./bid-gems-list/bid-gems-list.module').then( m => m.BidGemsListPageModule)
+  }
 ];
 
 @NgModule({

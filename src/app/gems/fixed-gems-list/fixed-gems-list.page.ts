@@ -5,19 +5,25 @@ import { Gem } from '../gem.model';
 import { GemsService } from '../gems.service';
 
 @Component({
-  selector: 'app-gem-list',
-  templateUrl: './gem-list.page.html',
-  styleUrls: ['./gem-list.page.scss'],
+  selector: 'app-fixed-gems-list',
+  templateUrl: './fixed-gems-list.page.html',
+  styleUrls: ['./fixed-gems-list.page.scss'],
 })
-export class GemListPage implements OnInit {
+export class FixedGemsListPage implements OnInit {
+
   gemlist: Gem[];
   constructor(
     private gemsService: GemsService,
     private router: Router) { }
 
-  ngOnInit() {
-    this.gemlist = this.gemsService.gems;
+  ngOnInit() {}
+
+  ionViewWillEnter() {
+    this.gemlist = this.gemsService.gems.filter((gem) => {
+      return gem.type == 'griff'
+    });
   }
+
   onEdit(gemsId: string, slidingItem: IonItemSliding){
     slidingItem.close();
     this.router.navigate(['/', 'gems', 'tabs', 'gem-list', 'edit-gem', gemsId]);

@@ -7,7 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { GemDetailPageRoutingModule } from './gem-detail-routing.module';
 
 import { GemDetailPage } from './gem-detail.page';
-import { CreateBidingComponent } from '../../../biding/create-biding/create-biding.component';
+import { CreateBidingComponent } from '../../biding/create-biding/create-biding.component';
 
 @NgModule({
   imports: [

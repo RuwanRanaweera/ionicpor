@@ -6,7 +6,7 @@ const routes: Routes = [
 
   {
     path: '',
-    redirectTo: 'gems',
+    redirectTo: 'dashboard',
     pathMatch: 'full'
   },
   {
@@ -39,6 +39,22 @@ const routes: Routes = [
     path: 'home',
     loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
   },
+  {
+    path: 'dashboard',
+    loadChildren: () => import('./dashboard/dashboard.module').then( m => m.DashboardPageModule)
+  },
+        {
+          path: 'new-gem',
+          loadChildren: () => import('./gems/new-gem/new-gem.module').then( m => m.NewGemPageModule)
+        },
+        {
+          path: 'edit-gem/:gemId',
+          loadChildren: () => import('./gems/edit-gem/edit-gem.module').then( m => m.EditGemPageModule)
+        },
+        {
+          path: ':gemId',
+          loadChildren: () => import('./gems/gem-bid/gem-bid.module').then( m => m.GemBidPageModule)
+        }
 ];
 
 @NgModule({

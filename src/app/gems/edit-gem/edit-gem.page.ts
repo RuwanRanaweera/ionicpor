@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { NavController } from '@ionic/angular';
-import { Gem } from '../../gem.model';
-import { GemsService } from '../../gems.service';
+import { Gem } from '../gem.model';
+import { GemsService } from '../gems.service';
 
 @Component({
   selector: 'app-edit-gem',

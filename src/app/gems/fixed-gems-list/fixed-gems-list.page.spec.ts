@@ -1,19 +1,19 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { GemListPage } from './gem-list.page';
+import { FixedGemsListPage } from './fixed-gems-list.page';
 
-describe('GemListPage', () => {
-  let component: GemListPage;
-  let fixture: ComponentFixture<GemListPage>;
+describe('FixedGemsListPage', () => {
+  let component: FixedGemsListPage;
+  let fixture: ComponentFixture<FixedGemsListPage>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ GemListPage ],
+      declarations: [ FixedGemsListPage ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(GemListPage);
+    fixture = TestBed.createComponent(FixedGemsListPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

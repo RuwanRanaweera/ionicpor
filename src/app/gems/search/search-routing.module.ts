@@ -10,7 +10,7 @@ const routes: Routes = [
   },
   {
     path: 'gem-detail',
-    loadChildren: () => import('./gem-detail/gem-detail.module').then( m => m.GemDetailPageModule)
+    loadChildren: () => import('../gem-detail/gem-detail.module').then( m => m.GemDetailPageModule)
   }
 ];
 

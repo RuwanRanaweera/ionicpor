@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { GemListPageRoutingModule } from './gem-list-routing.module';
+import { DashboardPageRoutingModule } from './dashboard-routing.module';
 
-import { GemListPage } from './gem-list.page';
+import { DashboardPage } from './dashboard.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    GemListPageRoutingModule
+    DashboardPageRoutingModule
   ],
-  declarations: [GemListPage]
+  declarations: [DashboardPage]
 })
-export class GemListPageModule {}
+export class DashboardPageModule {}

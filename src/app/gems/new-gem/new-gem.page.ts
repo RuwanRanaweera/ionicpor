@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { GemsService } from '../../gems.service';
+import { GemsService } from '../../gems/gems.service';
 
 @Component({
   selector: 'app-new-gem',
@@ -26,16 +26,12 @@ export class NewGemPage implements OnInit {
         price: new FormControl(null, {
           updateOn: 'blur',
           validators: [Validators.required, Validators.min(1)]
-        })
-        // ,
-        // dateFrom: new FormControl(null, {
-        //   updateOn: 'blur',
-        //   validators: [Validators.required]
-        // }),
-        // dateTo: new FormControl(null, {
-        //   updateOn: 'blur',
-        //   validators: [Validators.required]
-        // })
+        },
+        ),
+        type: new FormControl('biff', {
+          validators: [Validators.required]
+        },
+        )
       });
   }
   onCreateGem() {
@@ -43,9 +39,13 @@ export class NewGemPage implements OnInit {
       return;
     }
     console.log(this.form);
-    this.gemsService.addGem(this.form.value.title, this.form.value.description, +this.form.value.price );
+    this.gemsService.addGem(this.form.value.title, this.form.value.description, +this.form.value.price, this.form.value.type );
     // this.form.reset();
-    // this.router.navigate(['/gems/tabs/gem-list']);
+    if (this.form.value.type === 'griff') {
+      this.router.navigate(['gems/fixed-gems-list']);
+    } else {
+      this.router.navigate(['gems/bid-gems-list']);
+    }
   }
 
 }

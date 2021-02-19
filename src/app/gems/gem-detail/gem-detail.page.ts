@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ActionSheetController, ModalController, NavController } from '@ionic/angular';
-import { CreateBidingComponent } from '../../../biding/create-biding/create-biding.component';
-import { Gem } from '../../gem.model';
-import { GemsService } from '../../gems.service';
+import { CreateBidingComponent } from '../../biding/create-biding/create-biding.component';
+import { Gem } from '../gem.model';
+import { GemsService } from '../gems.service';
 
 @Component({
   selector: 'app-gem-detail',

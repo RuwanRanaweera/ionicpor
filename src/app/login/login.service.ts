@@ -13,9 +13,7 @@ export class LoginService {
 
   async fetchValuve(body) {
     console.log(body);
-    const successRes = await this.http.request('GET', this.baseUrl, {body: body, headers: new HttpHeaders({
-      'Content-Type':  'application/json'
-    })}).toPromise();
-    return successRes;
+    const successRes = await this.http.request('POST', this.baseUrl, {body: body}).toPromise();
+    return successRes;  
   }
 }
