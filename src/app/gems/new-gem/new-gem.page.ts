@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, RoutesRecognized } from '@angular/router';
+import { filter, pairwise } from 'rxjs/operators';
 import { GemsService } from '../../gems/gems.service';
 
 @Component({
@@ -10,9 +11,16 @@ import { GemsService } from '../../gems/gems.service';
 })
 export class NewGemPage implements OnInit {
   form: FormGroup;
+  privUrl: String;
   constructor( private gemsService: GemsService, private router: Router) { }
 
   ngOnInit() {
+    this.router.events
+    .pipe(filter((e: any) => e instanceof RoutesRecognized),
+        pairwise()
+    ).subscribe((e: any) => {
+      this.privUrl = e[0].urlAfterRedirects;
+    });
     this.form = new FormGroup(
       {
         title: new FormControl(null, {
