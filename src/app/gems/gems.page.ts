@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-gems',
   templateUrl: './gems.page.html',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GemsPage implements OnInit {
 
-  constructor() { }
+  constructor(  ) { }
 
   ngOnInit() {
   }
+
 
 }

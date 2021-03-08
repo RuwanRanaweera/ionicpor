@@ -9,6 +9,7 @@
 
 <ion-content>
   <form [formGroup]="form">
+    <!-- {{form.value | json}} -->
   <ion-grid>
     <ion-row>
       <ion-col size-sm="6" offset-sm="3" >
@@ -30,12 +31,12 @@
         
             <ion-item>
               <ion-label>Fixed Gem</ion-label>
-              <ion-radio   slot="start" value="griff"  ></ion-radio>
+              <ion-radio   slot="start" value=true></ion-radio>
             </ion-item>
         
             <ion-item>
               <ion-label>Bid Gem</ion-label>
-              <ion-radio  slot="start" value="biff" ></ion-radio>
+              <ion-radio  slot="start" value=false></ion-radio>
             </ion-item>
           </ion-radio-group>
         </ion-list>
@@ -98,8 +99,12 @@
 
       </ion-col>
     </ion-row> -->
+    <input type="file" id="imageUpload" (change)="onSelectFile($event)" multiple>
+
+   
+
     
-    <ion-button expand="block" fill="outline" (click)="onCreateGem()" [disabled]="!form.valid">Add Gem</ion-button>
+    <ion-button expand="block" fill="outline" (click)="uploadToFIrebase()" [disabled]="!form.valid">Add Gem</ion-button>
     <ion-button expand="block" color = "danger" fill="outline"  [disabled]="!form.valid" (click)="onCancle()">Cancle</ion-button>
   </ion-grid>
 </form>

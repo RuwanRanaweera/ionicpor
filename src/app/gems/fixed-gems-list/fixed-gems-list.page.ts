@@ -4,6 +4,8 @@ import { IonItemSliding } from '@ionic/angular';
 import { Gem } from '../gem.model';
 import { GemsService } from '../gems.service';
 
+import { FirebaseService } from '../firebase.service';   
+
 @Component({
   selector: 'app-fixed-gems-list',
   templateUrl: './fixed-gems-list.page.html',
@@ -14,7 +16,12 @@ export class FixedGemsListPage implements OnInit {
   gemlist: Gem[];
   constructor(
     private gemsService: GemsService,
-    private router: Router) { }
+    private router: Router ,
+
+    private firebaseService: FirebaseService
+    
+    ) { }
+    
 
   ngOnInit() {}
 

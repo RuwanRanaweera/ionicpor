@@ -11,10 +11,18 @@ import { AppRoutingModule } from './app-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
+import { AngularFireModule } from '@angular/fire';
+import { environment } from 'src/environments/environment';
+import { AngularFireStorageModule } from '@angular/fire/storage';
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule,  ReactiveFormsModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule],
+  imports: [BrowserModule,  ReactiveFormsModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule,
+  
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireStorageModule
+  ],
   providers: [
     StatusBar,
     SplashScreen,
